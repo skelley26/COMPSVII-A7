@@ -31,18 +31,16 @@ console.log("My #6 favorite food is " + favoriteFoods[4]);
     // "I always recommend ____ to friends."
     // "Trust me — ____ is delicious."
 function printFoodRecommendation(foodName) {
-  // for (let i = 0; i < list.size(); i++);
-    console.log("Have you ever tried" + favoriteFoods[3] + "?");
-    console.log("I always recommend" + favoriteFoods[5] + "to friends.");
-    console.log("Trust me-" + favoriteFoods[6] + "is delicious.");
+    console.log("Have you ever tried " + foodName + "?");
+    console.log("I always recommend " + foodName + " to friends.");
+    console.log("Trust me- " + foodName + " is delicious.");
 };
 
 
-
 // 4b. Call the function at least 3 times
-printFoodRecommendation(foodName)
-printFoodRecommendation(foodName)
-printFoodRecommendation(foodName)
+printFoodRecommendation("Seafood Alfredo");
+printFoodRecommendation("Sweet Potato Soup");
+printFoodRecommendation("Corned Beef and Cabbage Soup");
 
 // Here's a list of 50 friends' favorite foods:
 let friendFavorites = [
@@ -50,6 +48,7 @@ let friendFavorites = [
   ];
 
 // 5. Print out only foods that have an "a" in the name. For example, "Pizza" would not be included, but "Donuts" would be.
+console.log("Foods with the letter a in them:");
 for (let food of friendFavorites) {
   if (food.includes("a")){
     console.log(food);
@@ -74,6 +73,7 @@ for (let food of friendFavorites) {
     longFoodNames.push(food);
   }
 }
+console.log(longFoodNames);
 
 
 // 8. Create another array shortFoodNames for foods 6 characters or shorter.
@@ -83,6 +83,7 @@ for (let food of friendFavorites) {
     shortFoodNames.push(food);
   }
 }
+console.log(shortFoodNames)
 
 
 // 9. Print both arrays and compare:
@@ -97,11 +98,13 @@ else if (shortFoodNames.length < longFoodNames.length) {
 // 10. STRETCH: Find the longest food name and print:
 // "The longest food name in the list is ______ with ___ characters."
 function longest() {
-  return Array.sort(function (a, b) {
+  return [...friendFavorites].sort(function (a, b) {
     return b.length - a.length;
   })[0];
 }
-console.log(longest());
+ 
+let longestFood = longest();
+console.log("The longest food name in the list is " + longestFood + " with " + longestFood.length + " characters.");
 //I used what my beloved geeksforgeeks told me, however I am still a little confused on how this part works.
 
 
